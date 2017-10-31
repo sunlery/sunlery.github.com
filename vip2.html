@@ -16,6 +16,9 @@
                                     function onClear(){
                                             document.getElementById("vipurl").value="";
                                     }
+                                    function onSet1(){
+                                            document.getElementById("vipurl").value="https://v.qq.com/x/cover/ceusrubximxm0g8/f0023pr1ts0.html";
+                                    }
                                     function onPlay(){
                                             var oJK = document.getElementById("jk");
                                             var sJK=oJK.options[oJK.selectedIndex].value;
@@ -181,7 +184,7 @@
                                         <option value="http://jx.okokjx.com/okokjx/?url=" selected>
                                             接口46
                                         </option>
-                                    </select> <input type="text" name="vipurl" id="vipurl" size="88" value="http://v.youku.com/v_show/id_XMzA4MjMyOTA1Ng==.html"> <input type="button" value="播放" onclick="onPlay()"> <input type="button" value="清除" onclick="onClear()">
+                                    </select> <input type="text" name="vipurl" id="vipurl" size="88" value="http://v.youku.com/v_show/id_XMzA4MjMyOTA1Ng==.html"> <input type="button" value="播放" onclick="onPlay()"> <input type="button" value="清除" onclick="onClear()"><input type="button" value="三国45" onclick="onSet1();onPlay()">
                                 </form>
                             </td>
                         </tr>
