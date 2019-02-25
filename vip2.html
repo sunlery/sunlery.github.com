@@ -7,6 +7,124 @@
     <link href="favicon.ico" mce_href="favicon.ico" rel="bookmark" type="image/x-icon" />
     <link href="favicon.ico" mce_href="favicon.ico" rel="icon" type="image/x-icon" />
     <link href="favicon.ico" mce_href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <style>
+        #header {
+            z-index: 100;
+            left: 0;
+            top: 0px;
+            height: 60px;
+            width: 100%;
+            position: fixed;
+            background: url(./images/nav-bg.gif) #353535;
+            border-bottom: 4px solid #434343;
+            -moz-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
+            -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
+            -o-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
+            box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
+        }
+
+        .wrapper {
+            max-width: 650px;
+            margin: 0 auto;
+            position: relative;
+            padding: 0 20px;
+        }
+
+        #header nav {
+            max-width: 650px;
+            margin: 0 auto;
+            padding: 0 10px;
+            background: blue;
+            margin: 6px auto;
+        }
+
+        #header nav li {
+            font-family: 'OpenSansLight', "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-weight: normal;
+            list-style: none;
+            display: inline;
+            color: white;
+            line-height: 50px;
+            text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.2);
+            font-size: 14px;
+        }
+
+        #header nav li input,
+        select {
+            color: white;
+            border: 1px solid #5d910b;
+            background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #93bd20), color-stop(100%, #659e10));
+            background: -webkit-linear-gradient(#93bd20, #659e10);
+            background: -moz-linear-gradient(#93bd20, #659e10);
+            background: -o-linear-gradient(#93bd20, #659e10);
+            background: -ms-linear-gradient(#93bd20, #659e10);
+            background: linear-gradient(#93bd20, #659e10);
+            -moz-border-radius: 2px;
+            -webkit-border-radius: 2px;
+            -o-border-radius: 2px;
+            -ms-border-radius: 2px;
+            -khtml-border-radius: 2px;
+            border-radius: 2px;
+            -moz-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), 0px 3px 7px rgba(0, 0, 0, 0.7);
+            -webkit-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), 0px 3px 7px rgba(0, 0, 0, 0.7);
+            -o-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), 0px 3px 7px rgba(0, 0, 0, 0.7);
+            box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), 0px 3px 7px rgba(0, 0, 0, 0.7);
+            background-color: #93bd20;
+            padding: 10px 12px;
+            margin-top: 6px;
+            line-height: 14px;
+            font-size: 14px;
+            display: inline-block;
+            text-align: center;
+        }
+
+        #header nav li input:hover {
+            background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #749619), color-stop(100%, #527f0e));
+            background: -webkit-linear-gradient(#749619, #527f0e);
+            background: -moz-linear-gradient(#749619, #527f0e);
+            background: -o-linear-gradient(#749619, #527f0e);
+            background: -ms-linear-gradient(#749619, #527f0e);
+            background: linear-gradient(#749619, #527f0e);
+            background-color: #659e10;
+            border: 1px solid #527f0e;
+            -moz-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.2), 0px 1px 0px rgba(0, 0, 0, 0);
+            -webkit-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.2), 0px 1px 0px rgba(0, 0, 0, 0);
+            -o-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.2), 0px 1px 0px rgba(0, 0, 0, 0);
+            box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.2), 0px 1px 0px rgba(0, 0, 0, 0);
+        }
+
+        #header nav li.fork {
+            float: left;
+            margin-left: 0.1px;
+        }
+
+        #header nav li.downloads {
+            float: right;
+            margin-left: 6px;
+        }
+
+        #header nav li.title {
+            float: right;
+            margin-right: 10px;
+            font-size: 11px;
+        }
+
+        @media print,
+        screen and (max-width: 480px) {
+            #header {
+                margin-top: -20px;
+            }
+
+            section {
+                margin-top: 40px;
+            }
+
+            nav {
+                display: none;
+            }
+        }
+    </style>
     <script language="JavaScript" type="text/javascript">
         //<!--
         function onload() {
@@ -41,9 +159,9 @@
 
 <body onload="onload()" bgcolor="#000000">
     <table width="100%" align="center" height="100%" border="0" cellpadding="0" cellspacing="0">
-        <tr>
-            <td height="9">
-                <form method="post" action="">
+        <div id="header">
+            <nav>
+                <li class="fork">
                     <select name="jk" id="jk" size="1" onchange="fnChange()">
                         <option value="http://api.baiyug.cn/vip/index.php?url=">
                             超清
@@ -190,19 +308,22 @@
                             接口47
                         </option>
                     </select>
-                    <input type="text" name="vipurl" id="vipurl" size="88" value="">
-                    <input type="button" value="播放" onclick="onPlay()">
-                    <input type="button" value="清除" onclick="onClear()">
-                    <input type="button" value="三国45" onclick="onSanGuo();onPlay()">
-                </form>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <iframe src="" name="play" id="play" width="100%" align="center" height="100%" frameborder="0"
-                    marginheight="0" marginwidth="0" scrolling="no"></iframe>
-            </td>
-        </tr>
+                </li>
+                <li class="fork"><input type="text" name="vipurl" id="vipurl" size="43" value=""></li>
+                <li class="fork"><input type="button" value="播放" onclick="onPlay()"></li>
+                <li class="fork"><input type="button" value="清除" onclick="onClear()"></li>
+                <li class="fork"><input type="button" value="三国45" onclick="onSanGuo();onPlay()"></li>
+            </nav>
+
+        </div>
+
+        <!--
+            <div class="wrapper">
+            <iframe src="//player.bilibili.com/player.html?aid=44356309&cid=77668273&page=1" border="0" frameborder="no" framespacing="0" scrolling="no" allowfullscreen="true" style="width: 720px; height: 480px;" __idm_id__="139885569"> 
+            </div>
+        -->
+        <iframe src="" name="play" id="play" width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0"
+            scrolling="no"></iframe>
     </table>
 </body>
 
