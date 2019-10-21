@@ -51,8 +51,7 @@
             font-size: 14px;
         }
 
-        #header nav li input,
-        select {
+        #header nav li input{
             color: white;
             border: 1px solid #5d910b;
             background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #93bd20), color-stop(100%, #659e10));
@@ -94,7 +93,15 @@
             -o-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.2), 0px 1px 0px rgba(0, 0, 0, 0);
             box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.2), 0px 1px 0px rgba(0, 0, 0, 0);
         }
-
+        #header nav li select {
+            border: none;
+            padding-left: 10px;
+            width: 120px;
+            height: 100%;
+            -webkit-appearance: none;   /* Safari 和 Chrome */
+            -moz-appearance: none;   /* Firefox */
+            background: transparent;
+        }
         #header nav li.fork {
             float: left;
             margin-left: 0.1px;
@@ -125,6 +132,7 @@
                 display: none;
             }
         }
+
     </style>
     <script language="JavaScript" type="text/javascript">
         //<!--
@@ -138,6 +146,14 @@
         }
         function onSanGuo() {
             document.getElementById("vipurl").value = "https://v.qq.com/x/cover/ceusrubximxm0g8/f0023pr1ts0.html";
+        }
+        function onNeZha() {
+            var sJK = "https://jiexi.071811.cc/jx2.php?url=";
+            var sVipUrl = "https://www.iqiyi.com/v_19rrcuke28.html?vfm=2008_aldbd&fc=828fb30b722f3164&fv=p_02_01#";
+            var oWin = document.getElementById("play");
+            if (sVipUrl.length > 0) {
+                oWin.src = sJK + sVipUrl;
+            }
         }
         function onPlay() {
             var oJK = document.getElementById("jk");
@@ -165,7 +181,7 @@
                 <li class="fork">
                     <select name="jk" id="jk" size="1" onchange="fnChange()">
                         <option value="https://z1.m1907.cn/?jx=">默认线路(腾讯 爱奇艺 优酷 乐视 芒果 搜狐)</option>
-                        <option value="https://jiexi.071811.cc/jx2.php?url=" selected>爱奇艺 优酷(第一源)</option>
+                        <option value="https://jiexi.071811.cc/jx2.php?url=">爱奇艺 优酷(第一源)</option>
                         <option value="https://cn.bjbanshan.cn/jx.php?url=">爱奇艺 优酷(第二源)</option>
                         <option value="https://okjx.cc/?url=">B站(第一源)</option>
                         <option value="https://jx.bwcxy.com/?v=">B站(第二源)</option>
@@ -189,7 +205,7 @@
                         <option value="http://api.pucms.com/index.php?url=">
                             接口5
                         </option>
-                        <option value="http://api.wlzhan.com/sudu/?url=">
+                        <option value="http://api.wlzhan.com/sudu/?url=" selected>
                             接口6
                         </option>
                         <option value="http://www.0335haibo.com/yun.php?url=">
@@ -321,6 +337,7 @@
                 <li class="fork"><input type="button" value="播放" onclick="onPlay()"></li>
                 <li class="fork"><input type="button" value="清除" onclick="onClear()"></li>
                 <li class="fork"><input type="button" value="三国45" onclick="onSanGuo();onPlay()"></li>
+                <li class="fork"><input type="button" value="哪吒" onclick="onNeZha();onPlay()"></li> 
             </nav>
 
         </div>
